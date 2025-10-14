@@ -1,9 +1,9 @@
 .box {
     width: 100px;
     margin: 0.25rem;
-    background-color: limegreen;
+    background-color: DarkRed;
     padding: 10px;
-    border: 0.3rem solid limegreen;
+    border: 0.3rem solid DarkRed;
 }
 
 .box img {

@@ -4,8 +4,8 @@
 }
 
 .learning_buttons {
-    border: 3px solid limegreen;
-    background-color: limegreen;
+    border: 3px solid DarkRed;
+    background-color: DarkRed;
     border-radius: 5px;
     padding: 5px;
     margin: 3px;
@@ -15,10 +15,10 @@
 }
 
 .learning_buttons:hover {
-    border: 3px solid limegreen;
+    border: 3px solid DarkRed;
     cursor: pointer;
     background-color: #000b1d;
-    color: limegreen;
+    color: DarkRed;
 }
 
 .Back_To_First_Menu,
@@ -35,7 +35,7 @@
 .Container {
     border: 5px solid #000b1d;
     margin: auto;
-    background-color: limegreen;
+    background-color: DarkRed;
 }
 
 .Container::backdrop {
@@ -58,7 +58,7 @@
 .Exit {
     border: 2px solid #000b1d;
     background-color: #000b1d;
-    color: limegreen;
+    color: DarkRed;
     font-weight: bolder;
     width: min-content;
     position: absolute;
@@ -69,8 +69,8 @@
 }
 
 .Exit:hover {
-    color: black;
-    background-color: limegreen;
+    color: white;
+    background-color: DarkRed;
     border: 2px solid #000b1d;
 }
 

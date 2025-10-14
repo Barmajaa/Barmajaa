@@ -6,8 +6,8 @@
 .box {
     width: 100px;
     margin: 0 !important;
-    background-color: limegreen;
-    border: 0.3rem solid limegreen;
+    background-color: DarkRed;
+    border: 0.3rem solid DarkRed;
     padding: 0.5rem !important;
     margin: 0.1rem !important;
 }
@@ -23,5 +23,5 @@
 
 .box a p {
     font-size: larger;
-    color: black;
+    color: white;
 }

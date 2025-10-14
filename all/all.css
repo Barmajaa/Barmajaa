@@ -4,7 +4,7 @@
     border-radius: 10px;
     text-align: center;
     justify-content: center;
-    color: black;
+    color: white;
     cursor: default;
     text-decoration: none;
     transition: 0.3s all;
@@ -12,7 +12,7 @@
     scroll-behavior: smooth;
 
     /* for Firefox  */
-    scrollbar-color: #000b1d limegreen;
+    scrollbar-color: #000b1d DarkRed;
     scrollbar-width: auto;
 
     -webkit-user-select: none;
@@ -28,13 +28,13 @@ html {
 }
 
 header {
-    background-color: limegreen;
+    background-color: DarkRed;
     border-radius: 0px 0px 20px 20px;
     padding: 5px;
 }
 
 nav {
-    background-color: limegreen;
+    background-color: DarkRed;
     font-weight: bold;
     font-size: larger;
     margin: 5px;
@@ -45,7 +45,7 @@ nav {
 .nav {
     background-color: #000b1d;
     border: 2px solid #000b1d;
-    color: limegreen;
+    color: DarkRed;
     border-radius: 10px;
     flex-grow: 1;
     padding: 5px;
@@ -70,15 +70,15 @@ nav {
 .nav:hover,
 .nav:focus {
     border: 2px solid #000b1d;
-    background-color: limegreen;
-    color: black;
+    background-color: DarkRed;
+    color: white;
     cursor: pointer;
 }
 
 .Container_AboutUs {
     border: 5px solid #000b1d;
     margin: auto;
-    background-color: limegreen;
+    background-color: DarkRed;
     padding: 5px;
 }
 
@@ -89,22 +89,22 @@ nav {
 
 main {
     border-radius: 15px;
-    background-color: limegreen;
+    background-color: DarkRed;
     font-weight: bold;
     padding: 5px;
     margin: 10px;
-    box-shadow: 1px 1px 5px limegreen,
-        -1px -1px 5px limegreen;
+    box-shadow: 1px 1px 5px DarkRed,
+        -1px -1px 5px DarkRed;
 }
 
 .h1_main {
-    background-color: limegreen;
+    background-color: DarkRed;
     padding: 5px;
     margin-bottom: 5px;
 }
 
 .p_main {
-    color: limegreen;
+    color: DarkRed;
     border-radius: 5px;
     padding: 10px;
     font-size: large;
@@ -122,7 +122,7 @@ main {
 .learning_Dialog_buttons {
     border: 3px solid #000b1d;
     background-color: #000b1d;
-    color: limegreen;
+    color: DarkRed;
     border-radius: 5px;
     padding: 7px;
     margin: 7px;
@@ -133,14 +133,14 @@ main {
 
 .learning_Dialog_buttons:hover {
     cursor: pointer;
-    background-color: limegreen;
-    color: black;
+    background-color: DarkRed;
+    color: white;
 }
 
 .Exit_Prof {
     border: 2px solid #000b1d;
     background-color: #000b1d;
-    color: limegreen;
+    color: DarkRed;
     font-weight: bolder;
     width: min-content;
     position: absolute;
@@ -151,8 +151,8 @@ main {
 }
 
 .Exit_Prof:hover {
-    color: black;
-    background-color: limegreen;
+    color: white;
+    background-color: DarkRed;
     border: 2px solid #000b1d;
 }
 
@@ -167,10 +167,10 @@ main {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(90deg, limegreen, #000b1d);
+    background: linear-gradient(90deg, DarkRed, #000b1d);
     border-radius: 0.3rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(270deg, #000b1d, limegreen, #000b1d);
+    background: linear-gradient(270deg, #000b1d, DarkRed, #000b1d);
 }
