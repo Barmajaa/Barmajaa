@@ -1,0 +1,79 @@
+.buttons_container {
+    display: none;
+    flex-flow: row wrap;
+}
+
+.learning_buttons {
+    border: 3px solid DarkRed;
+    background-color: DarkRed;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 3px;
+    /* display: none; */
+    flex: content;
+    direction: ltr;
+}
+
+.learning_buttons:hover {
+    border: 3px solid DarkRed;
+    cursor: pointer;
+    background-color: #000b1d;
+    color: DarkRed;
+}
+
+.Back_To_First_Menu,
+.Back_To_Programming_Menu,
+.Back_To_Programming_Programming_Programs_Menu,
+.Back_To_Graphic_Menu {
+    flex: 100%;
+}
+
+.Background_Container {
+    opacity: 0.3;
+}
+
+.Container {
+    border: 5px solid #000b1d;
+    margin: auto;
+    background-color: DarkRed;
+}
+
+.Container::backdrop {
+    background-color: white;
+    opacity: 0.4;
+}
+
+.Dia_H3 {
+    text-align: center;
+    display: inline-flex;
+    margin: 5px;
+}
+
+.hr_end {
+    background-color: #000b1d;
+    border: 2px solid #000b1d;
+    margin: 7px;
+}
+
+.Exit {
+    border: 2px solid #000b1d;
+    background-color: #000b1d;
+    color: DarkRed;
+    font-weight: bolder;
+    width: min-content;
+    position: absolute;
+    padding: 2px;
+    margin-top: 5px;
+    display: inline-block;
+    left: 0;
+}
+
+.Exit:hover {
+    color: white;
+    background-color: DarkRed;
+    border: 2px solid #000b1d;
+}
+
+.show_anything_div {
+    display: flex;
+}

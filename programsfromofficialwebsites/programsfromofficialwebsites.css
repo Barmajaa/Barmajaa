@@ -1,0 +1,22 @@
+.box {
+    width: 100px;
+    margin: 0.25rem;
+    background-color: DarkRed;
+    padding: 10px;
+    border: 0.3rem solid DarkRed;
+}
+
+.box img {
+    width: 50px;
+    border-radius: 20%;
+    padding: 5px;
+}
+
+.box:hover {
+    background-color: #000b1d;
+}
+
+.box p {
+    font-size: larger;
+    color: white;
+}

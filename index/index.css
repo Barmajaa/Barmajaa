@@ -1,0 +1,27 @@
+.div_info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 100px;
+    margin: 0 !important;
+    background-color: DarkRed;
+    border: 0.3rem solid DarkRed;
+    padding: 0.5rem !important;
+    margin: 0.1rem !important;
+}
+
+.box img {
+    width: 50px;
+    border-radius: 20%;
+}
+
+.box:hover {
+    background-color: #000b1d;
+}
+
+.box a p {
+    font-size: larger;
+    color: white;
+}
