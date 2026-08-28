@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>برمجة</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <script>
+        (function () {
+            const color = localStorage.getItem("themeColor");
+            const light = localStorage.getItem("themeLight");
+            const dim = localStorage.getItem("themeDim");
+
+            if (color && light && dim) {
+                document.documentElement.style.setProperty("--accent", color);
+                document.documentElement.style.setProperty("--accent-light", light);
+                document.documentElement.style.setProperty("--accent-dim", dim);
+            }
+        })();
+    </script>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="logo">
+        <span class="site-name">({&#60;/&#62;})</span>
+        <span class="hijri-date" id="hijriDate"></span>
+    </div>
+
+    <nav class="main-nav">
+        <button class="nav-btn active" data-section="home">الرئيسية</button>
+        <button class="nav-btn" data-section="projects">المشاريع</button>
+        <button class="nav-btn" data-section="statistics">الإحصائيات</button>
+        <button class="nav-btn" data-section="team">الفريق</button>
+        <button class="nav-btn" data-section="skills">المهارات</button>
+        <button class="nav-btn" data-section="contact">التواصل</button>
+    </nav>
+
+    <div class="theme-picker">
+        <span class="theme-label">السمة:</span>
+
+        <button class="theme-swatch"
+                data-color="#6b6b6b"
+                data-light="#8a8a8a"
+                data-dim="rgba(107,107,107,0.15)"
+                title="رمادي"></button>
+
+        <button class="theme-swatch active"
+                data-color="#8b1a1a"
+                data-light="#c0392b"
+                data-dim="rgba(139,26,26,0.15)"
+                title="أحمر"></button>
+
+        <button class="theme-swatch"
+                data-color="#1a4a8b"
+                data-light="#2980b9"
+                data-dim="rgba(26,74,139,0.15)"
+                title="أزرق"></button>
+
+        <button class="theme-swatch"
+                data-color="#1a6b2e"
+                data-light="#27ae60"
+                data-dim="rgba(26,107,46,0.15)"
+                title="أخضر"></button>
+
+        <button class="theme-swatch"
+                data-color="#5b1a8b"
+                data-light="#8e44ad"
+                data-dim="rgba(91,26,139,0.15)"
+                title="بنفسجي"></button>
+
+        <button class="theme-swatch"
+                data-color="#8b4a1a"
+                data-light="#e67e22"
+                data-dim="rgba(139,74,26,0.15)"
+                title="برتقالي"></button>
+    </div>
+</header>
+
+<main>
+
+    <section id="home" class="page-section active visible">
+        <div class="hero hero-bg-extreme">
+            <div class="hero-inner">
+                <h1 class="hero-title">
+                    <span id="typeTarget"></span>
+                    <span class="cursor-blink"></span>
+                </h1>
+
+                <p class="hero-sub">
+                    لتطوير مشاريع برمجية
+                    <br/>
+                    وتقديم حلول رقمية أنيقة وفعّالة إن شاء الله.
+                </p>
+
+                <div class="hero-btns">
+                    <button class="pixel-btn" data-goto="projects">مشاريعنا</button>
+                    <button class="pixel-btn" data-goto="statistics">الإحصائيات</button>
+                    <button class="pixel-btn" data-goto="contact">تواصل معنا</button>
+                </div>
+            </div>
+
+            <div class="bg-layer-particles"></div>
+            <div class="bg-layer-waves"></div>
+            <div class="bg-layer-ripple"></div>
+            <div class="bg-layer-grid"></div>
+            <div class="bg-layer-glow"></div>
+        </div>
+
+        <div class="stats-wrap">
+            <div class="stats-grid" id="statsContainer"></div>
+        </div>
+
+        <div class="home-analysis">
+            <div class="analysis-heading">
+                <p class="section-label">نظرة سريعة</p>
+                <h2 class="section-title">لمحة عن نشاط الفريق</h2>
+            </div>
+
+            <div class="mini-analysis-grid">
+                <div class="pixel-card mini-analysis-card">
+                    <div class="mini-analysis-title">أكثر سنة نشاطاً</div>
+                    <div class="mini-analysis-value" id="homeBestYear">—</div>
+                    <div class="mini-analysis-meta" id="homeBestYearMeta">—</div>
+                </div>
+
+                <div class="pixel-card mini-analysis-card">
+                    <div class="mini-analysis-title">إجمالي الأدوات والتقنيات</div>
+                    <div class="mini-analysis-value" id="homeTopTech">—</div>
+                    <div class="mini-analysis-meta" id="homeTopTechMeta">—</div>
+                </div>
+
+                <div class="pixel-card mini-analysis-card">
+                    <div class="mini-analysis-title">متوسط الأدوات لكل عضو</div>
+                    <div class="mini-analysis-value" id="homeAvgTech">—</div>
+                    <div class="mini-analysis-meta">أداة لكل عضو</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="page-section">
+        <div class="inner-wrap">
+            <p class="section-label">مَشَارِيعُنَا</p>
+            <h2 class="section-title">أبرز مشاريع الفريق</h2>
+            <div class="projects-grid" id="projectsContainer"></div>
+        </div>
+    </section>
+
+    <section id="statistics" class="page-section">
+        <div class="inner-wrap statistics-wrap">
+
+            <div class="statistics-header">
+                <div>
+                    <p class="section-label">تحليل البيانات</p>
+                    <h2 class="section-title">إحصائيات الفريق والمشاريع</h2>
+                </div>
+
+                <div class="statistics-controls">
+                    <label for="yearFilter">الفترة</label>
+
+                    <select id="yearFilter">
+                        <option value="all">كل السنوات</option>
+                    </select>
+
+                    <button class="pixel-btn small-btn" id="resetStatistics">
+                        إعادة ضبط
+                    </button>
+                </div>
+            </div>
+
+            <div class="statistics-kpis" id="statisticsKpis"></div>
+
+            <div class="charts-grid">
+
+                <div class="pixel-card chart-card chart-large">
+                    <div class="chart-header">
+                        <div>
+                            <h3>المشاريع حسب السنة</h3>
+                            <p>توزيع المشاريع المسجلة على السنوات</p>
+                        </div>
+                        <span class="chart-badge">BAR</span>
+                    </div>
+
+                    <div class="canvas-container">
+                        <canvas id="projectsYearChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="pixel-card chart-card chart-large">
+                    <div class="chart-header">
+                        <div>
+                            <h3>النمو الزمني للمشاريع</h3>
+                            <p>التغير في عدد المشاريع عبر السنوات</p>
+                        </div>
+                        <span class="chart-badge">LINE</span>
+                    </div>
+
+                    <div class="canvas-container">
+                        <canvas id="projectsTrendChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="pixel-card chart-card">
+                    <div class="chart-header">
+                        <div>
+                            <h3>استخدام التقنيات</h3>
+                            <p>التقنيات الأكثر ظهوراً في المشاريع</p>
+                        </div>
+                        <span class="chart-badge">RANK</span>
+                    </div>
+
+                    <div class="canvas-container">
+                        <canvas id="technologyChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="pixel-card chart-card">
+                    <div class="chart-header">
+                        <div>
+                            <h3>توزيع مجالات المشاريع</h3>
+                            <p>تصنيف المشاريع حسب المجال</p>
+                        </div>
+                        <span class="chart-badge">DONUT</span>
+                    </div>
+
+                    <div class="canvas-container">
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="pixel-card chart-card chart-full">
+                    <div class="chart-header">
+                        <div>
+                            <h3>مقارنة مجالات المهارات</h3>
+                            <p>مقارنة حجم المهارات التقنية ضمن المجالات المختلفة</p>
+                        </div>
+                        <span class="chart-badge">RADAR</span>
+                    </div>
+
+                    <div class="canvas-container radar-container">
+                        <canvas id="skillsRadarChart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="statistics-table-card pixel-card">
+                <div class="chart-header">
+                    <div>
+                        <h3>التفاصيل الرقمية</h3>
+                        <p>ملخص تفصيلي للإحصائيات الحالية</p>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="statistics-table">
+                        <thead>
+                        <tr>
+                            <th>المؤشر</th>
+                            <th>القيمة</th>
+                            <th>النسبة</th>
+                            <th>الوصف</th>
+                        </tr>
+                        </thead>
+
+                        <tbody id="statisticsTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="team" class="page-section">
+        <div class="inner-wrap">
+            <p class="section-label">مَن نَحن؟</p>
+            <h2 class="section-title">نُبذَة عنَّا</h2>
+            <div class="team-grid" id="teamContainer"></div>
+        </div>
+    </section>
+
+    <div id="cvModal" class="modal-overlay">
+        <div class="modal-content pixel-card" dir="rtl">
+            <span class="modal-close" id="cvModalClose">x</span>
+            <h2 class="modal-title">السيرة الذاتية</h2>
+            <div id="cvContent" class="cv-content"></div>
+        </div>
+    </div>
+
+    <section id="skills" class="page-section">
+        <div class="inner-wrap">
+            <p class="section-label">مَهَارَاتِي</p>
+            <h2 class="section-title">تقنياتنا</h2>
+            <div id="skillsContainer" class="skills-grid"></div>
+        </div>
+    </section>
+
+    <section id="contact" class="page-section">
+        <div class="inner-wrap">
+            <p class="section-label">التَّوَاصُل مَعَ الفَرِيق</p>
+            <h2 class="section-title">كيف تجدنا؟</h2>
+
+            <div class="contact-links" id="contactLinks"></div>
+
+            <form class="contact-form" id="contactForm">
+                <input type="hidden" name="accent" id="themeAccent" value="#8b1a1a">
+                <input type="hidden" name="light" id="themeLight" value="#c0392b">
+                <input type="hidden" name="dim" id="themeDim" value="rgba(139,26,26,0.15)">
+
+                <div class="form-group">
+                    <label for="fname">الاسم</label>
+                    <input type="text" id="fname" name="name" placeholder="عبد الباري بن محمد" required/>
+                </div>
+
+                <div class="form-group">
+                    <label for="femail">البريد الإلكتروني</label>
+                    <input type="email" id="femail" name="email" placeholder="email@example.com" required/>
+                </div>
+
+                <div class="form-group">
+                    <label for="fmsg">الرسالة</label>
+                    <textarea id="fmsg" name="message" rows="5" placeholder="اكتب رسالتك للفريق هنا..." required></textarea>
+                </div>
+
+                <button type="submit" class="pixel-btn full-width">
+                    إرسال الرسالة
+                </button>
+            </form>
+        </div>
+    </section>
+
+</main>
+
+<button class="back-to-top"
+        id="backToTop"
+        aria-label="العودة للأعلى">
+    ↑
+</button>
+
+<footer class="site-footer">
+    (&#60;/&#62;)
+    <br/>
+    برمجة
+</footer>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

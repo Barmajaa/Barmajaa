@@ -1,0 +1,74 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --accent: #8b1a1a;
+    --accent-light: #c0392b;
+    --accent-dim: rgba(139, 26, 26, 0.15);
+    --bg: #111111;
+    --bg2: #1a1a1a;
+    --bg3: #222222;
+    --border: #2e2e2e;
+    --text: #e0e0e0;
+    --text-muted: #888888;
+    --success: #4caf50;
+    --warning: #d6a532;
+    --danger: #c0392b;
+    --accent-border-width: 3px;
+    --card-radius: 0;
+    --section-pad-top: 48px;
+    --section-pad-bottom: 60px;
+}
+
+@font-face {
+    font-family: "RooyinFree";
+    src: url("../fonts/RooyinFree-Regular.ttf") format("truetype");
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: "RooyinFree", sans-serif;
+}
+
+body {
+    direction: rtl;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: var(--card-radius);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
