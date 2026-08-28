@@ -7,7 +7,7 @@ export const data = {
             bio: "شغوف ببناء أنظمة متكاملة باستخدام Kotlin ومنصاتها المتعددة، يركّز على الأداء والجودة.",
             experienceStart: "1443-10-25",
             cvDetails: {
-                "Programming Languages": ["Java", "Kotlin", "SQL", "HTML", "CSS", "JavaScript", "C++", "C#", "Python", "PHP"],
+                "Programming Languages": ["Java", "Kotlin", "SQL", "HTML", "CSS", "JavaScript", "C++", "C#", "Python", "PHP", "Bash"],
                 "Mobile Development": ["Jetpack Compose", "Legacy Code", "Material Design", "Room Database", "KMP"],
                 "Web Development": ["Kobweb", "Wasm"],
                 "Backend": ["Ktor", "JWT", "RESTful APIs", "Exposed", "Firebase", "Supabase"],
@@ -29,7 +29,7 @@ export const data = {
     ],
     contacts: [
         {
-            icon: "✉",
+            icon: "▣",
             label: "البريد الإلكتروني",
             value: "barmajaa.tech@gmail.com"
         },
