@@ -14,16 +14,6 @@
     position: relative;
     z-index: 10;
     max-width: 720px;
-    animation: heroFloat 4s ease-in-out infinite;
-}
-
-@keyframes heroFloat {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
 }
 
 .site-header {

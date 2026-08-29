@@ -93,7 +93,7 @@
     }
 
     .hero-inner {
-        animation: heroFloat 6s ease-in-out infinite;
+        animation: none;
     }
 
     .bg-layer-particles,
