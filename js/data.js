@@ -37,13 +37,18 @@ export const data = {
         },
         {
             icon: "◈",
-            label: "جيت هب",
+            label: "جيتهب",
             value: "https://github.com/Barmajaa"
         },
         {
             icon: "◉",
             label: "تيليجرام",
             value: "https://t.me/BarmajaaChat"
+        },
+        {
+            icon: "◭",
+            label: "يوتيوب",
+            value: "https://www.youtube.com/@Barmajaa"
         }
     ]
 };
