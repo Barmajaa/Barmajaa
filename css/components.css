@@ -270,6 +270,7 @@
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 16px;
     margin-top: 12px;
+    direction: ltr;
 }
 
 .skill-card {
