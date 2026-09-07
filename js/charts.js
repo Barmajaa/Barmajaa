@@ -325,10 +325,11 @@ export function drawSkillsRadarChart() {
         }
 
         ctx.closePath();
-
-        ctx.strokeStyle = colors.dim;
+        ctx.strokeStyle = colors.accent;
+        ctx.globalAlpha = 0.22;
         ctx.lineWidth = 1;
         ctx.stroke();
+        ctx.globalAlpha = 1;
     }
 
     for (let index = 0; index < labels.length; index++) {
@@ -340,9 +341,11 @@ export function drawSkillsRadarChart() {
         ctx.moveTo(centerX, centerY);
         ctx.lineTo(x, y);
 
-        ctx.strokeStyle = colors.dim;
+        ctx.strokeStyle = colors.accent;
+        ctx.globalAlpha = 0.5;
         ctx.lineWidth = 1;
         ctx.stroke();
+        ctx.globalAlpha = 1;
 
         const labelRadius = radius + 28;
         const labelX = centerX + Math.cos(angle) * labelRadius;
