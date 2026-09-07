@@ -88,17 +88,28 @@ export function openCV(id) {
     if (!member) return;
     const content = document.getElementById("cvContent");
     const experience = getMemberExperience(member);
+
     let html = `
-        <p><strong>الاسم:</strong> ${member.name}</p>
-        <p><strong>المهنة:</strong> ${member.role}</p>
-        <p><strong>سنوات الخبرة:</strong> ${toEasternNumber(experience)}</p>
-        <p><strong>الخبرات التقنية:</strong></p>
-        <ul class="cv-list">
+        <div class="cv-header">
+            <p><strong>الاسم:</strong> ${member.name}</p>
+            <p><strong>المهنة:</strong> ${member.role}</p>
+            <p><strong>سنوات الخبرة:</strong> ${toEasternNumber(experience)}</p>
+        </div>
+        <div class="cv-details">
     `;
+
     Object.entries(member.cvDetails).forEach(([category, techs]) => {
-        html += `<li><strong>${category}</strong>: ${techs.join(", ")}</li>`;
+        html += `
+            <div class="cv-category">
+                <div class="cv-category-title">${category}</div>
+                <div class="cv-tech-list">
+                    ${techs.map(tech => `<span class="cv-tech-tag">${tech}</span>`).join('')}
+                </div>
+            </div>
+        `;
     });
-    html += "</ul>";
+
+    html += `</div>`;
     content.innerHTML = html;
     document.getElementById("cvModal").classList.add("active");
 }
