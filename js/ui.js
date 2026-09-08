@@ -72,15 +72,20 @@ export function renderSkills() {
 export function renderContacts() {
     const container = document.getElementById("contactLinks");
     if (!container) return;
-    container.innerHTML = data.contacts.map((contact, index) => `
+    container.innerHTML = data.contacts.map((contact, index) => {
+        let valueHtml = contact.value;
+        if (contact.value.startsWith("http")) {
+            valueHtml = `<a href="${contact.value}" target="_blank" rel="noopener noreferrer" style="color:var(--text);text-decoration:none;">${contact.value}</a>`;
+        }
+        return `
         <div class="pixel-card contact-card" data-delay="${index * 120}">
             <span class="contact-icon">${contact.icon}</span>
             <div>
                 <div class="contact-label">${contact.label}</div>
-                <div class="contact-val">${contact.value}</div>
+                <div class="contact-val">${valueHtml}</div>
             </div>
         </div>
-    `).join("");
+    `}).join("");
 }
 
 export function openCV(id) {

@@ -6,7 +6,42 @@ import {renderStatistics, populateYearFilter} from './statistics.js';
 import {gotoSection, animateSectionElements} from './navigation.js';
 import {animateStats, typeHero} from './animation.js';
 
+function generateSchema() {
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "برمجة",
+        "url": "https://barmajaa.github.io/Barmajaa",
+        "logo": "https://barmajaa.github.io/Barmajaa/favicon.ico",
+        "description": "فريق برمجة متخصص في تطوير المشاريع البرمجية وتقديم حلول رقمية أنيقة وفعالة.",
+        "member": data.members.map(m => ({
+            "@type": "Person",
+            "name": m.name,
+            "jobTitle": m.role,
+            "description": m.bio
+        })),
+        "contactPoint": data.contacts.map(c => ({
+            "@type": "ContactPoint",
+            "contactType": c.label,
+            "url": c.value.startsWith("http") ? c.value : undefined,
+            "email": c.label === "البريد الإلكتروني" ? c.value : undefined
+        })),
+        "makesOffer": data.projects.map(p => ({
+            "@type": "CreativeWork",
+            "name": p.title,
+            "description": p.desc,
+            "datePublished": p.year,
+            "keywords": p.tags.join(", ")
+        }))
+    };
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+    generateSchema();
     restoreThemeFromStorage();
     updateHijriDate();
     setInterval(updateHijriDate, 60000);
@@ -73,7 +108,6 @@ document.getElementById("contactForm").addEventListener("submit", function (even
     iframe.onload = function () {
         alert("✅ تم إرسال رسالتك بنجاح!");
         form.reset();
-
         submitBtn.disabled = false;
         submitBtn.textContent = originalText;
         iframe.onload = null;
