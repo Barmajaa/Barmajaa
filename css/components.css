@@ -353,11 +353,40 @@
     margin-bottom: 2px;
 }
 
-.contact-val {
-    font-size: 14px;
+.contact-val a {
+    position: relative;
+    display: inline-block;
+    padding: 4px 0;
     color: var(--text);
+    text-decoration: none;
     font-weight: 500;
-    word-break: break-word;
+    transition: color 0.12s ease, transform 0.12s ease;
+    transform: translateY(0);
+}
+
+.contact-val a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.15s ease;
+    transform: translateX(-50%);
+}
+
+.contact-val a:hover {
+    color: var(--accent-light);
+    transform: translateY(-2px);
+}
+
+.contact-val a:hover::after {
+    width: 100%;
+}
+
+.contact-val a:active {
+    transform: translateY(0);
 }
 
 .contact-form {
