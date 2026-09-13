@@ -64,9 +64,29 @@ export function yearToIslamic(gy) {
     return result.year;
 }
 
-export function getCurrentIslamicDate() {
+export function getCurrentIslamicDate(timeZone) {
     const now = new Date();
-    return gregorianToIslamic(now.getFullYear(), now.getMonth() + 1, now.getDate());
+
+    const options = {
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+        calendar: 'islamic-umalqura',
+        numberingSystem: 'latn'
+    };
+
+    if (timeZone) {
+        options.timeZone = timeZone;
+    }
+
+    const formatter = new Intl.DateTimeFormat('en-US-u-ca-islamic-umalqura', options);
+    const parts = formatter.formatToParts(now);
+
+    const day = parseInt(parts.find(part => part.type === 'day').value, 10);
+    const month = parseInt(parts.find(part => part.type === 'month').value, 10);
+    const year = parseInt(parts.find(part => part.type === 'year').value, 10);
+
+    return {year, month, day};
 }
 
 export function calculateExperienceYears(startDate) {
